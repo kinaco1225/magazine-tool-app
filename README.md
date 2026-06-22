@@ -1,4 +1,4 @@
-# FleaMarket（フリマアプリ）
+#magazine-tool（加工機工具管理）
 
 ## 環境構築
 ### Docker のビルドからマイグレーション、シーディングまでを行い開発環境を構築
@@ -10,31 +10,13 @@
 - `php artisan key:generate`  アプリキー生成
 - `php artisan migrate --seed` によりデータベースをセットアップ
 ---
-#### 画像アップロードに関する権限設定
-##### プロフィール画像・商品画像は storage ディレクトリに保存されます。Docker 環境では、以下のコマンドで 書き込み権限の設定を行ってください。
-- `chmod -R 777 storage bootstrap/cache`
-- `php artisan storage:link`
-- --
-- `php artisan serve` でローカルサーバー起動
-- -- 
-## .env 設定について（Stripe）
-#### 本アプリでは Stripe を使用していますが、開発・テスト環境ではダミーキーを使用します。以下のように `.env`　`.env.testing` に設定してください。
-- STRIPE_KEY=pk_test_xxxxxxxxxxxxxx
-- STRIPE_SECRET=your_stripe_test_secret
-## .env 設定について（メール送信（MailHog））
-#### 本アプリでは、開発環境に MailHog を使用しています。以下のように .envに設定してください。
-- MAIL_FROM_ADDRESS=`no-reply@flea-market.test`
-#### MailHog Web UI：
-- `http://localhost:8025`
-- -- 
-
 ## テスト用ユーザー情報
-#### 本アプリには 動作確認用のテストユーザーを2名用意しています。いずれも 同一のパスワードでログイン可能です。
-##### テストユーザー①
-- login-email `test1@example.com`
+#### 本アプリには 動作確認用のテストユーザーとして、管理者と作業者の2名用意しています。いずれも 同一のパスワードでログイン可能です。
+##### 管理者
+- login-email `admin@example.com`
 - login-password `password`
-##### テストユーザー②
-- login-email `test2@example.com`
+##### 作業者
+- login-email `worker@example.com`
 - login-password `password`
 - -- 
 ## テスト実行方法
@@ -46,10 +28,3 @@
 - Laravel 8.x
 - MySQL 8.x
 - WSL2 + Docker（開発環境）
---- 
-## 補足事項
-#### テストについて
-- 支払い方法の選択機能については、画面上の表示制御をJavaScriptで行っているため、バックエンド側での個別実装は行っていません。
-####  Seeder 実行後や画像アップロード時にfopen(): Permission denied が発生した場合は、以下を再実行してください。
-- `chmod -R 777 storage bootstrap/cache`
----
