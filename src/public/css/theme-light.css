@@ -1,0 +1,176 @@
+/* ========================================
+   Light Theme — CSS Variable Override
+   ======================================== */
+:root {
+    --color-bg:           #f0f4f8;
+    --color-surface:      #ffffff;
+    --color-surface-2:    #f7f9fc;
+    --color-border:       #e2e8f0;
+    --color-primary:      #4f8ef7;
+    --color-primary-hover:#3a78e8;
+    --color-text:         #1e293b;
+    --color-text-muted:   #64748b;
+}
+
+/* ---- Body ---- */
+html, body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+    background-color: #ffffff;
+    border-right-color: var(--color-border);
+    box-shadow: 1px 0 0 var(--color-border);
+}
+
+.sidebar-brand-main { color: var(--color-text); }
+
+.nav-item { color: var(--color-text-muted); }
+.nav-item:hover {
+    background-color: #f0f4f8;
+    color: var(--color-text);
+}
+.nav-item.is-active {
+    background-color: rgba(79,142,247,0.1);
+    color: var(--color-primary);
+}
+
+/* ---- Top bar ---- */
+.top-bar {
+    background-color: #ffffff;
+    border-bottom-color: var(--color-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.sidebar-toggle:hover { background-color: var(--color-surface-2); }
+
+/* ---- Welcome banner ---- */
+.welcome-banner {
+    background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+    border-color: rgba(79,142,247,0.25);
+}
+.welcome-text h2 { color: #1e3a5f; }
+.welcome-text p  { color: #3b6fa8; }
+.welcome-icon    { opacity: 0.5; }
+
+/* ---- Menu cards ---- */
+.menu-card {
+    background-color: #ffffff;
+    border-color: var(--color-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.menu-card:hover {
+    background-color: #f7f9fc;
+    border-color: var(--color-primary);
+    box-shadow: 0 6px 20px rgba(79,142,247,0.12);
+    transform: translateY(-2px);
+}
+.menu-card-body h3 { color: var(--color-text); }
+.menu-card-body p  { color: var(--color-text-muted); }
+
+/* ---- Table ---- */
+.table-card {
+    background-color: #ffffff;
+    border-color: var(--color-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.table th {
+    background-color: #f7f9fc;
+    color: var(--color-text-muted);
+}
+.table td {
+    color: var(--color-text);
+    border-bottom-color: var(--color-border);
+}
+.table tbody tr:hover td { background-color: #f7faff; }
+
+/* ---- Form ---- */
+.form-card {
+    background-color: #ffffff;
+    border-color: var(--color-border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.form-group label { color: #475569; }
+.form-section-label {
+    color: var(--color-text-muted);
+    border-bottom-color: var(--color-border);
+}
+.input-wrapper input,
+.input-wrapper select {
+    background-color: #f7f9fc;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+.input-wrapper input::placeholder { color: #94a3b8; }
+.input-wrapper input:focus,
+.input-wrapper select:focus {
+    background-color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(79,142,247,0.15);
+}
+.form-textarea {
+    background-color: #f7f9fc;
+    border-color: var(--color-border);
+    color: var(--color-text);
+}
+.form-textarea:focus {
+    background-color: #ffffff;
+    border-color: var(--color-primary);
+}
+
+/* ---- Buttons ---- */
+.btn-cancel {
+    border-color: var(--color-border);
+    color: var(--color-text-muted);
+    background: #ffffff;
+}
+.btn-cancel:hover {
+    background-color: #f7f9fc;
+    color: var(--color-text);
+}
+.btn-detail {
+    background-color: #f0f4f8;
+    color: #475569;
+}
+.btn-detail:hover {
+    background-color: #e2e8f0;
+    color: var(--color-text);
+}
+
+/* ---- Alerts ---- */
+.alert-success {
+    background-color: rgba(34,197,94,0.08);
+    border-color: rgba(34,197,94,0.3);
+    color: #16a34a;
+}
+.alert-error {
+    background-color: rgba(239,68,68,0.08);
+    border-color: rgba(239,68,68,0.25);
+    color: #dc2626;
+}
+
+/* ---- Modal ---- */
+.modal-overlay { background-color: rgba(0,0,0,0.35); }
+.modal {
+    background-color: #ffffff;
+    border-color: var(--color-border);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+}
+.modal-close:hover { background-color: #f0f4f8; }
+.detail-row { border-bottom-color: var(--color-border); }
+.detail-row dt { color: var(--color-text-muted); }
+.detail-row dd { color: var(--color-text); }
+
+/* ---- Category cards ---- */
+.category-card {
+    background-color: #ffffff;
+    border-color: var(--color-border);
+}
+.category-card-name  { color: var(--color-text); }
+.category-card-count { color: var(--color-text-muted); }
+.category-card-actions { border-top-color: var(--color-border); }
+
+/* ---- Misc ---- */
+.text-muted { color: var(--color-text-muted) !important; }
+.list-count span { color: var(--color-text); }
