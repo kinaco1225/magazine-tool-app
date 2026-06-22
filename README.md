@@ -24,7 +24,7 @@
 - `php artisan test --testsuite=Feature`テスト実行
 ---
 ## 使用技術（実行環境）
-- PHP 8.x
-- Laravel 8.x
-- MySQL 8.x
+- PHP 8.3
+- Laravel 13.x
+- MySQL 8.0
 - WSL2 + Docker（開発環境）
